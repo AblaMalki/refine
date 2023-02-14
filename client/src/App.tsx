@@ -136,6 +136,7 @@ function App() {
       <RefineSnackbarProvider>
         <Refine
           dataProvider={dataProvider('http://localhost:8080/api/v1')}
+          // dataProvider={dataProvider('https://api.fake-rest.refine.dev')}
           notificationProvider={notificationProvider}
           ReadyPage={ReadyPage}
           catchAll={<ErrorComponent />}
@@ -154,30 +155,30 @@ function App() {
               show: AgentProfile,
               icon: <PeopleAltOutlined />,
             },
-            {
-              name: 'reviews',
-              list: Home,
-              icon: <StarOutlineRounded />,
-            },
-            {
-              name: 'messages',
-              list: Home,
-              icon: <ChatBubbleOutline />,
-            },
+            // {
+            //   name: 'reviews',
+            //   list: Home,
+            //   icon: <StarOutlineRounded />,
+            // },
+            // {
+            //   name: 'messages',
+            //   list: Home,
+            //   icon: <ChatBubbleOutline />,
+            // },
             {
               name: 'my-profile',
               options: { label: 'My Profile' },
               list: MyProfile,
               icon: <AccountCircleOutlined />,
             },
-            {
-              name: 'users',
-              list: MuiInferencer,
-              edit: MuiInferencer,
-              show: MuiInferencer,
-              create: MuiInferencer,
-              canDelete: true,
-            },
+            // {
+            //   name: 'users',
+            //   list: MuiInferencer,
+            //   edit: MuiInferencer,
+            //   show: MuiInferencer,
+            //   create: MuiInferencer,
+            //   canDelete: true,
+            // },
           ]}
           Title={Title}
           Sider={Sider}

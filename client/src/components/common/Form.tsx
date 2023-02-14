@@ -54,7 +54,7 @@ const Form = ({
             <TextField
               fullWidth
               required
-              id="outlined-basic"
+              label="Title"
               color="info"
               variant="outlined"
               {...register('title', { required: true })}
@@ -136,7 +136,7 @@ const Form = ({
               <TextField
                 fullWidth
                 required
-                id="outlined-basic"
+                label="Price"
                 color="info"
                 type="number"
                 variant="outlined"
@@ -159,7 +159,7 @@ const Form = ({
             <TextField
               fullWidth
               required
-              id="outlined-basic"
+              label="Location"
               color="info"
               variant="outlined"
               {...register('location', { required: true })}

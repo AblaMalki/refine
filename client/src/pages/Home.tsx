@@ -9,6 +9,19 @@ import {
   PropertyCard,
 } from 'components';
 const Home = () => {
+  const { data, isLoading, isError } = useList({
+    resource: 'properties',
+    config: {
+      pagination: {
+        pageSize: 4,
+      },
+    },
+  });
+
+  const latestProperties = data?.data ?? [];
+
+  if (isLoading) return <Typography>Loading...</Typography>;
+  if (isError) return <Typography>Something went wrong!</Typography>;
   return (
     <Box>
       <Typography fontSize={25} fontWeight={700} color="#11142D">
@@ -63,7 +76,7 @@ const Home = () => {
           Latest Properties
         </Typography>
 
-        {/* <Box mt={2.5} sx={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
+        <Box mt={2.5} sx={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
           {latestProperties.map((property) => (
             <PropertyCard
               key={property._id}
@@ -74,7 +87,7 @@ const Home = () => {
               photo={property.photo}
             />
           ))}
-        </Box> */}
+        </Box>
       </Box>
     </Box>
   );
